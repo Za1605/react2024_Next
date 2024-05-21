@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div>
+            
+        </div>
+    );
+};
 
 export default App;
+
+//..https://dummyjson.com/docs/users
+//..    отримати та вивести інфу по всіх юзерах. Для запитів використовуємо axios та розносимо логіку в сервіси
+//    ..Структура компонентів : App - Users- User
+//    ..в компоненті User зробити кнопку при натсиканні на яку відбувається
+//    стейт ліфтінг ід користувача в батьківську компоненту.
+//    В батьківській компоненті вивести всі пости обраного
+//    юзера (https://dummyjson.com/docs/posts  Get all posts by user id)
