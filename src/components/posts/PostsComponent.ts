@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {IPostModel} from "../../models/IPostModel";
+import {post} from "axios";
 
-const PostsComponent = () => {
+
+interface IProps{
+    posts:IPostModel[];
+}
+
+
+const PostsComponent: FC<IProps> = ({posts}) => {
     return (
         <div>
-            
-            </div>
+            {
+            posts.map((post:IPostModel)=> (<li key ={post.id}> {post.title}</li>))
+            }
+                        </div>
+
     );
 };
 
