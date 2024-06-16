@@ -4,9 +4,12 @@ import {Link, NavLink} from "react-router-dom";
 const PostsComponent = () => {
     return (
         <div>
-            <NavLink to= "/">user page</NavLink>
-            <Link to= "users"> comments page</Link>
-            <Link to= "posts"> posts page</Link>
+           <NavLink to= "/">users page</NavLink>
+            <br/>
+           <Link to= "comments"> comments page</Link>
+            <br/>
+           <Link to= "posts"> posts page</Link>
+            <hr/>
         </div>
     );
 };

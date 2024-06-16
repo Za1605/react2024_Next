@@ -7,7 +7,7 @@ const Mainlayout = () => {
     return (
         <div>
           <HeaderComponent/>
-            <Outlet/>
+                             <Outlet/>
               <UserComponent/>
 
         </div>
