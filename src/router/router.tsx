@@ -3,17 +3,26 @@ import Mainlayout from "../layout/Mainlayout";
 import React from "react";
 
 import HomePage from "../pages/HomePage";
-import UserComponent from "../components/UserComponent";
+import UsersPage from "../pages/UsersPage";
+import PostsPage from "../pages/PostsPage";
 
 
 export const routerConfig= createBrowserRouter([
 
-    {path: '/',
+    {
+        path: '/',
         element: <Mainlayout/>,
             children: [ ///outlet
                 {index:true, element: <HomePage/>},
-                {path:'users', element:<UserComponent/>}
+                {
+                    path:'users', element:<UsersPage/>,
+                children:[
+                {path:':id',element:<PostsPage/>}
+                ]
+                },
 
             ]
             },
-    ]);
+
+
+]);

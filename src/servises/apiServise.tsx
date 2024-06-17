@@ -8,11 +8,13 @@ let axiosInstanse= axios.create({
 
 const userApiService = {
     getAllUsers:():Promise<AxiosResponse <IUserModel[]>> => {
-        return axiosInstanse.get("users");
+        return axiosInstanse.get("/users");
+
     },
-   // getUserByUserId:async (userId:number):Promise<AxiosResponse<IUserModel>> =>{
-   //   return await  axiosInstanse.get(`users/${userId}`)
-   // }
+
+    getUserByUserId:async (userId:number):Promise<AxiosResponse<IUserModel>> =>{
+      return await  axiosInstanse.get(`users/${userId}`)
+    }
 }
 
 export default userApiService;

@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Outlet} from "react-router-dom";
 import HeaderComponent from "../components/HeaderComponent";
-import UserComponent from "../components/UserComponent";
+import UsersComponent from "../components/UsersComponent";
 
-const Mainlayout = () => {
+const Mainlayout :FC = () => {
     return (
         <div>
           <HeaderComponent/>
                              <Outlet/>
-              <UserComponent/>
+              <UsersComponent/>
 
         </div>
     );

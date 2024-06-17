@@ -1,19 +1,20 @@
-import React, {FC, useEffect, useState} from 'react';
+import React from 'react';
 import {IUserModel} from "../model/IUserModel";
-import userApiService from "../servises/apiServise";
+import {FC} from "react";
+import {Link, useNavigate} from "react-router-dom";
+
+interface IProps{
+    user:IUserModel;
+}
 
 
-const UserComponent: FC= () => {
-
-    const [users, setUsers] = useState<IUserModel[]>([]);
-    useEffect(() => {
-            userApiService.getAllUsers().then(value => setUsers(value.data));
-        },
-        []);
+const UserComponent: FC<IProps> = ({user}) => {
+    const navigate = useNavigate();
     return (
         <div>
-            <hr/>
-            {users.map(user => <div key={user.id}>{user.name}</div>)}
+             <Link
+                 to={user.id.toString()}
+             >{user.name}</Link>
         </div>
     );
 };
