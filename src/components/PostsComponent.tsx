@@ -1,11 +1,16 @@
 import React from 'react';
-import {useParams} from "react-router-dom";
+import {FC} from "react";
+import {IPostModel} from "../model/IPostModel";
 
-const PostsComponent = () => {
-    console.log(useParams());
+interface IProps {
+    posts:IPostModel[]
+}
+
+const PostsComponent :FC<IProps> = ({posts}) => {
+
     return (
         <div>
-
+ 
         </div>
     );
 };
