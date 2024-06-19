@@ -7,16 +7,19 @@ import userApiService from "../servises/apiServise";
 const PostsPage = () => {
 
     const {id}= useParams();
-    console.log(id);
+    //console.log(id);
 
     const [post, setPost] = useState<IPostModel[]>()
 
     useEffect(()=>{
-userApiService.getPostsofUser(id);
-    },[]);
+        if (id) {
+            userApiService.getPostsOfUser(id)
+                .then(value => setPost(value.data))
+        }
+    },[id]);
     return (
         <div>
-<PostsComponent post={post} setPost={setPost}/>
+<PostsComponent post={post} />
         </div>
     );
 };
